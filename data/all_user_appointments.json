@@ -1,0 +1,19 @@
+{
+    "all_appointments": [
+        {
+            "appointmentStartTime":"",
+            "appointmentEndTime":"",
+            "appointmentDate": "",
+            "appointmentReasons":[],
+            "appointmentComments":[],
+            "avatarUrl": null,
+            "hasDocumentsToFill": true,
+            "customerDocuments": [],
+            "customerFirstName":"",
+            "customerLastName":"",
+            "customerId": "",
+            "customerPhoneNumber": "",
+            "customerEmail":""
+        }
+    ]
+}
