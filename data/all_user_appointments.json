@@ -1,6 +1,7 @@
 {
     "all_appointments": [
         {
+            "appointment_id": "",
             "appointmentStartTime":"",
             "appointmentEndTime":"",
             "appointmentDate": "",
@@ -13,7 +14,9 @@
             "customerLastName":"",
             "customerId": "",
             "customerPhoneNumber": "",
-            "customerEmail":""
+            "customerEmail":"",
+            "staffFirstName": "",
+            "staffLastName": ""
         }
     ]
 }

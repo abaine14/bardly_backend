@@ -9,6 +9,7 @@ const generateRandomAppointments = (count) => {
 
   for (let i = 0; i < count; i++) {
     const appointment = {
+      appointmentId: generateRandomId(10),
       appointmentStartTime: getRandomTime(),
       appointmentEndTime: getRandomTime(),
       appointmentDate: getRandomDate(),
@@ -23,6 +24,9 @@ const generateRandomAppointments = (count) => {
       customerId: generateRandomId(10),
       customerPhoneNumber: generateRandomPhoneNumber(),
       customerEmail: generateRandomEmail(),
+      staffId: generateRandomId(10),
+      staffFirstName: generateRandomName(),
+      staffLastName: generateRandomName(),
     };
 
     appointments.push(appointment);
