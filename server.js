@@ -3,6 +3,7 @@ const cors = require("cors");
 const path = require("path");
 
 const appointmentRoutes = require("./routes/appointments")
+const staffRoutes = require("./routes/staff")
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/api/appointments", appointmentRoutes);
+app.use("/api/staffs", staffRoutes);
 
 // This can be used for sending files if necessary
 // app.use("/image/:id", async (req, res) => {

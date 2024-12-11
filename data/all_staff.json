@@ -1,0 +1,12 @@
+{
+    "all_staff": [
+        {
+            "staffId": "",
+            "staffFirstName":"",
+            "staffLastName":"",
+            "staffPhone": "",
+            "staffEmail": "",
+            "avatarUrl": ""
+        }
+    ]
+}
