@@ -1,7 +1,17 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swaggerConfig")
 
+const admin = require('firebase-admin');
+const firebaseConfig = require("./data/db_config.json")
+
+// Initialize Firebase Admin
+admin.initializeApp({
+  credential: admin.credential.cert(firebaseConfig),
+  databaseURL: 'https://bardly-test.firebaseio.com',
+});
 const appointmentRoutes = require("./routes/appointments")
 
 const app = express();
@@ -11,6 +21,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
+// Swagger docs
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// Appointments routes
 app.use("/api/appointments", appointmentRoutes);
 
 // This can be used for sending files if necessary
