@@ -358,7 +358,9 @@ routes.get("/:id", async(req,res)=>{
  *                   description: Error message detailing the issue.
  */
 
+// TODO Add appointment status
 routes.post("/create-appointment", async (req, res) => {
+  const { appopintmentToAdd } = req.body
   try {
     const newAppointment = appointmentMethods.mockAppointmentsList(1).all_appointments[0]; //req.body
     const docRef = await appointments_collection.add(newAppointment);

@@ -1,4 +1,4 @@
 node_modules/
 data/db_config.json
 .env
-package-lock.json
+/package-lock.json
