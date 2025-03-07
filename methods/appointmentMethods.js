@@ -19,8 +19,8 @@ const generateRandomAppointments = (count) => {
       avatarUrl: generateRandomAvatarUrl(),
       hasDocumentsToFill: Math.random() > 0.5,
       customerDocuments: generateRandomDocuments(2),
-      customerFirstName: generateRandomName(),
-      customerLastName: generateRandomName(),
+      customerFirstName: generateRandomName(true),
+      customerLastName: generateRandomName(false),
       customerId: generateRandomId(10),
       customerPhoneNumber: generateRandomPhoneNumber(),
       customerEmail: generateRandomEmail(),
@@ -79,7 +79,7 @@ const generateRandomDocuments = (count) => {
   return documents;
 }
 
-const generateRandomName = () =>{
+const generateRandomName = (isFirstName) =>{
   const firstNames = [
     "John",
     "Jane",
@@ -199,9 +199,7 @@ const generateRandomName = () =>{
     "Reynolds",
     "Rice",
   ];
-  return `${firstNames[Math.floor(Math.random() * firstNames.length)]} ${
-    lastNames[Math.floor(Math.random() * lastNames.length)]
-  }`;
+  return isFirstName ?`${firstNames[Math.floor(Math.random() * firstNames.length)]}` : `${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
 }
 
 const generateRandomId = (length) => {
@@ -220,7 +218,7 @@ const generateRandomPhoneNumber = () =>{
 
 const generateRandomEmail = () => {
   const domains = ["gmail.com", "yahoo.com", "hotmail.com", "example.com"];
-  return `${generateRandomName().toLowerCase()}@${
+  return `${generateRandomName(false).toLowerCase()}${generateRandomName(true).toLowerCase()}@${
     domains[Math.floor(Math.random() * domains.length)]
   }`;
 }
